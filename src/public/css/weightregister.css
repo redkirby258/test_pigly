@@ -1,0 +1,18 @@
+.html,body{
+    height: 780px;
+    background: linear-gradient(#a3a6e1, #ffabd9);
+    display: flex;
+    justify-content: space-between;
+}
+
+.weightregister-form{
+    width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 30px;
+}
+
+.weightregister-form__inner{
+    display: flex;
+    justify-content: center;
+}
