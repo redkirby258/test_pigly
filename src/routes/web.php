@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WeightController;
 use App\Http\Controllers\WeightTargetController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +20,10 @@ use App\Http\Controllers\WeightTargetController;
 */
 Route::get('/', [WeightController::class, 'update']);
 Route::get('/register/step2', [WeightTargetController::class, 'getRegister']);
-Route::middleware('auth')->group(function () {
     Route::get('/', [WeightController::class, 'update']);
     Route::get('/admin', [ContactController::class, 'admin']);
     Route::get('/search', [ContactController::class, 'search']);
     Route::post('/delete', [ContactController::class, 'destroy']);
     Route::post('/export', [ContactController::class, 'export']);
-});
+Route::get('/register/step1', [RegisteredUserController::class, 'create'])
+    ->name('register.step1');
